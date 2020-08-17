@@ -1,3 +1,10 @@
+# Specific to this app
+API keys are by default kept in the home directory in a file called api.json
+If you choose to keep the keys in a differenct path or file you must edit keys.py
+
+
+# General Principles
+
 # Generic APP
 
 * This is a generic flask app which I have used for education purposes. Below is some of the major resources
@@ -71,6 +78,11 @@ or just cat the file
 [Github SSH](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 
 
+## SERVER 
+We are going to run Apache 
+[Ubuntu Resource](https://ubuntu.com/tutorials/install-and-configure-apache#3-creating-your-own-website)
+You Apache2 resource can be found and configured in this path:
+/etc/apache2/sites-enabled/000-default.conf
 
 # genericApp
 python3 -m venv env
@@ -83,6 +95,30 @@ Install Dependencies
 pip install -r requirements.txt
 
 
+# The Application Itself
+
+## Working with Files and the Operating system
+[working with files and OS](https://realpython.com/working-with-files-in-python/)
+[OS module](https://docs.python.org/3/library/os.html)
+[open file - simplest](https://docs.python.org/3/library/functions.html#open)
+
+
+> import os
+
+
+
+## Requests TO flask 
+[request to flask ](https://flask.palletsprojects.com/en/0.12.x/reqcontext/)
+
+
+## HTTP/S Requests FROM flask
+As per the system of all Networks their is a request response
+
+Reuests are handled by pythons **urllib.request** 
+[urllib.request](https://docs.python.org/3/library/urllib.request.html#module-urllib.request)
+
+The response object is handled by **http.client**
+[http.client](https://docs.python.org/3/library/http.client.html#http.client.HTTPResponse)
 
 
 ###Resources

@@ -4,17 +4,116 @@
 <head>
 <title>Trading Data</title>
 
+<style>
+html {
+    background-color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 
+}
+
+body {
+    background: lightgray;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#header {
+    padding-top: 5;
+    background: lightsteelblue;
+}
+
+#inner-header {
+    padding-left: 10;
+
+}
+
+#main {
+    padding-left: 10;
+}
+
+input[type="text"], select {
+    color: grey;
+    border: 1px solid lightsteelblue;
+    height: 30px;
+    line-height: 15px;
+    margin: 2px 6px 16px 0px;
+}
+
+input[type="submit"] {
+    padding: 5px 10px 5px 10px;
+    color: black;
+    background: lightsteelblue;
+    border: none;
+    box-shadow: 1px 1px 1px #4c6E91;
+}
+
+input[type="submit"]:hover {
+    background: steelblue;
+}
+</style>
 
 </head>
 
 
 <body>
+<div id="header"> 
+    <div id="inner-header">
+            <h1>This is our Standard Home Page </h1>
+            <p>Our Python WebApplication Skeleton </p>
+
+    </div>
+   
+    <hr/>
+</div>
+<div id="main">
     <h1>Some News</h1>
+<!-- WEATHER INFORMATION  -->
+<form> 
+    <input type="text" name="city" placeholder="city">
+    <input type="text" name="publication" placeholder="search"/>
+    <input type="submit" value="Submit">
+<!-- forms by default produce a generic http request with the form input as a parameter, this will make a 
+request to the application endpoint with the form inputs as parameters -->
+</form>
+
+    <h2>Current Weather</h2>
+    <p>City: <b> {{ weather.city }} </b></p>
+    <p>Temperature: <b> {{ weather.temp}} </b></p>
+
+    <h2>Currency</h2>
     <form>
-        <input type="text" name="publication" placeholder="search"/>
-        <input type="submit" value="submit"/>
+        from: <select name="currency_from">
+                <option value="ISL">ISL</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+                <option value="ZAR">ZAR</option>
+             </select>
+
+        from: <select name="currency_to">
+                <option value="ISL">ISL</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+                <option value="ZAR">ZAR</option>
+             </select>
+             <input type="submit" value="submit">
+
     </form>
+    <form>
+        More Currencies 
+        <input type="radio" id="more" name="currencies" value="true">
+        <label for="male">More</label>
+        <input type="radio" id="less" name="currencies" value="false">
+        <label for="male">less</label>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>1 {{ rate.base}} = {{rate.currency}} <b> {{ rate.rate }} </b></p>
+
+<!-- RESPONSE -->
+
+
 
     {% for article in articles  %}
 
@@ -25,7 +124,7 @@
     {% endfor %}
     
 
-
+</div> 
 </body>
 </html>
 
